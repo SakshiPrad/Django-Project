@@ -14,56 +14,12 @@ PowerShell
 #Install django within this Virtual Environment
 --- pip install django
 
-#create Django project (main project have all the settings within it)
---- django-admin 
-startproject good_bye_fatty .
-
-#To create the App within project 
---- django-admin startapp counter
- 
-#ADD Installed Apps name in project's Setting.py 
---- 'counter',
-
-
-#imports urls
-
-
-#Create templates Folder in app 'counter'
---- add htmls file
-
-#start python terminal
---- python manage.py runserver 
-
-#To add CSS file CREATE static folder main project folder
-#ADD static folder path in setting.py
---- STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'good_bye_fatty/static/')
-]
-
-#load images from static folder Add this in top of html file & src .
---- {% load static%}
-
 #run Project
 --- python manage.py runserver
 --- python manage.py collectstatic 
 
 /*** FETCH API ***/
-
 #Fetching api of 'api-ninjas.com'
-
-#Add Method in html so that we can  fetch api, we well not give action here
---- method = "POST"
-
-#Add crsf_token in form of html file which is the security of Django / Security token
---- {%csrf_token%}
-
-#import json in view.py
-
-#So we are Accessing list over here (In list or array we have to access through index 0 1 2 . . .)
---- so we having a single list here {.i.e index is 0}
---- {{api.0.name}}
---- {{api.0.calorie}}
 
 /*** Calculting/filter Method ***/
 
@@ -80,9 +36,6 @@ STATICFILES_DIRS = [
 
 #Avoid Decimals and make it proper readable format add filter for ,load humanize method in to of html
 --- {%load humanize%}
-
-#Mention Humanize method to Install App also
---- 'django.contrib.humanize',
 
 #For Chart
 --- Go to https://www.chartjs.org/ 
